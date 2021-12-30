@@ -1,13 +1,15 @@
 import './App.css';
 import axios from "axios";
 import { useState , useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Piechart from "./components/Piechart"
 import BarChart from "./components/BarChart"
 import DoughnutChart from "./components/DoughnutChart"
 import Card from "./components/Card"
+// import { useNavigate } from "react-router-dom";
 
 let App=()=> {
+  // const navigate = useNavigate();
   const [allData, setAllData] = useState([]);
   const [value, setValue] = useState([]);
   let getData =(options)=>{
@@ -38,16 +40,20 @@ let App=()=> {
           <div className="App">
         <Router>
           <Routes>
-            <Route exact path="/donut" element ={ <DoughnutChart /> }>
+            <Route exact path="/donut" element ={ <DoughnutChart value ={value} /> }>
             </Route>
-             <Route exact path="/Pie" element={<Piechart value ={value}/>}>
+             <Route exact path="/pie" element={<Piechart value ={value}/>}>
               </Route> 
             <Route exact path="/Bar" element={ <BarChart allData = {allData}/>}>
             </Route> 
-             <Route exact path="/card" element ={<Card value ={value} />}>
+             <Route exact path="/" element ={<Card value ={value} />}>
             </Route>
           </Routes>
         </Router>
+       {/* <button onClick={()=>{
+         navigate("/donut")
+       }}>DoughnutChart</button> */}
+
     </div>
   );
 }

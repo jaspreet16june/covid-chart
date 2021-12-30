@@ -1,9 +1,9 @@
-.barChart {
+.pieChart {
   height: 100%;
-  width: 75%;
-  padding-top: 2.5rem;
+  width: 40%;
+  padding-top: 0.5rem;
 }
-.bar {
+.pie {
   background: url("../assests/light-brown-texture-background-free-photo.jpg")
     center;
   display: flex;
@@ -13,16 +13,10 @@
   height: 100vh;
   width: 100vw;
 }
-.heading {
+.head {
   color: saddlebrown;
-  position: absolute;
-  top: 40vw;
-  left: 5rem;
+  position: fixed;
+     top: 41vw;
+    left: 5rem;
   font-family: Fantasy;
-}
-.back{
-    margin:1.5rem;
-    position: fixed;
-    top:0rem;
-    left: 0rem;
 }

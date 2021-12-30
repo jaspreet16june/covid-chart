@@ -1,39 +1,79 @@
 import React from 'react'
 import { Pie } from "react-chartjs-2";
 import Chart from "chart.js/auto";
-
+import "../css/pieChart.css"
+import {Link} from "react-router-dom";
+import ArrowLeftSharpIcon from "@material-ui/icons/ArrowLeftSharp";
+import UndoSharpIcon from "@material-ui/icons/UndoSharp";
 const Piechart = ({value}) => {
-
-     let totalCases = [];
-     let totalDeaths = [];
-     let totalActiveCases = [];
-    // .replace(/,/g, "")
-       totalCases.push(parseInt(value.total_cases));
-       totalDeaths.push(parseInt(value.total_deaths));
-       totalActiveCases.push(parseInt(value.active_cases));
-    
-     console.log(totalCases);
-     console.log(totalDeaths);
-     console.log(totalActiveCases);
-
+        // console.log(value.total_deaths.replace(/\,/g, ""));
+        let totalCases = parseInt(value.total_cases);
+       let totalDeaths = parseInt(value.total_death);
+       let totalActiveCases = parseInt(value.active_cases);
+       let newCases = parseInt(value.new_cases);
+       let totalRecovered = parseInt(value.totalRecovered);
+       let newDeaths = parseInt(value.new_deaths);
+       let seriousCritical =parseInt(value.serious_critical);
 
      const data = {
-       labels:value,
        datasets: [
          {
-           label: [[totalCases],[totalDeaths]],
-           data: [totalCases,totalDeaths],
+           label: [
+             totalCases,
+             totalDeaths,
+             totalActiveCases,
+             totalRecovered,
+             newCases,
+             newDeaths,
+             seriousCritical,
+           ],
+           data: [
+             totalCases,
+             totalDeaths,
+             totalActiveCases,
+             totalRecovered,
+             newCases,
+             newDeaths,
+             seriousCritical,
+           ],
            borderColor: ["white"],
-           backgroundColor: ["red","yellow"],
+           backgroundColor: [
+             "lightpink",
+             "yellow",
+             "lightgreen",
+             "red",
+             "pink",
+             "lightpurple",
+             "gray",
+           ],
          },
        ],
-       //    backgroundColor:["red","pink","yellow"]
-     };
+       labels: [
+         "Total Cases",
+         "Total Deaths",
+         "Total Active Cases",
+         "Total Recovered",
+         "New Cases",
+         "New Deaths",
+         "Serious Critical",
+        ], 
+    };
     return (
-        <div className='pie'>
-            <Pie data={data} options={{responsive:true}}/>
+      <div className="pie">
+        <Link to="/" className="btn btn-dark back">
+            <UndoSharpIcon />
+            Back
+        </Link>
+        <div className="head">
+          <h1>
+            Here is the Pie Chart representation related to Covid all around the
+            world 
+          </h1>
         </div>
-    )
+        <div className="pieChart">
+          <Pie data={data} options={{ responsive: true }} />
+        </div>
+      </div>
+    );
 }
-
 export default Piechart;

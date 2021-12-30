@@ -2,6 +2,7 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import "../css/barChart.css";
+import {Link} from "react-router-dom";
 
 let BarChart=({ allData })=> {
      let countryName = [];
@@ -11,7 +12,7 @@ let BarChart=({ allData })=> {
 
      allData.slice(1,20).map((country)=>{
         countryName.push(country.country_name)
-        totalActiveCases.push(parseInt(country.active_cases.replace(/\,/g,'')))
+        totalActiveCases.push(parseInt(country.active_cases.replace(/\,/g,"")))
         totalDeaths.push(parseInt(country.deaths.replace(/\,/g, "")));
         totalCases.push(parseInt(country.deaths.replace(/\,/g, "")));
     })
@@ -81,8 +82,19 @@ let BarChart=({ allData })=> {
     },
   };
   return (
-    <div className="barChart">
-      <Bar data={data} options={options} />
+    <div className="bar">
+      <Link to="/" className="btn btn-dark back">
+        Back
+      </Link>
+      <div className="barChart">
+        <Bar data={data} options={options} />
+      </div>
+      <div className="heading">
+        <h1>
+          Here is the Bar Chart representation related to Covid all around the
+          world
+        </h1>
+      </div>
     </div>
   );
 }

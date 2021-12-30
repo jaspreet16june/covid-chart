@@ -1,13 +1,32 @@
-.card1{
-    height:200px;
-    width: 400px;
-    background-color: black;
+.card1 {
+  height: 40vh;
+  width: 40vw;
+  background-color: black;
+  border-radius: 1rem;
 }
-.head{
-    color: white;
+.mainly{
+     background: url("../assests/light-brown-texture-background-free-photo.jpg")
+    center;
+  height: 100vh;
+  width: 100vw;
 }
-.card2{
-    height:200px;
-    width: 400px;
-    background-color: palevioletred;
+.card2 {
+  height: 40vh;
+  width: 40vw;
+  background-color: black;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.main {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 4rem;
+}
+.head-1 {
+  color: white;
+  font-family: cursive;
+}
+.head-2 {
+  color: white;
+  font-family: cursive;
 }
