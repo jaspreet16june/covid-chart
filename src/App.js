@@ -1,16 +1,19 @@
 import './App.css';
 import axios from "axios";
 import { useState , useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Piechart from "./components/Piechart"
 import BarChart from "./components/BarChart"
-import LineChart from './components/LineChart';
+import DoughnutChart from "./components/DoughnutChart"
+import Card from "./components/Card"
 
 let App=()=> {
   const [allData, setAllData] = useState([]);
-
+  const [value, setValue] = useState([]);
   let getData =(options)=>{
     axios.request(options).then(function (response) {
       setAllData(response.data.countries_stat);
+      setValue(response.data.world_total);
     }).catch(function (error) {
       console.error(error);
     });
@@ -28,12 +31,23 @@ let App=()=> {
 
   }, [])
   console.log(allData);
+  console.log("value" , value);
 
   return (
-    <div className="App">
-     {/* <Piechart /> */}
-    <BarChart allData = {allData}/>
-    {/* <LineChart/> */}
+        
+          <div className="App">
+        <Router>
+          <Routes>
+            <Route exact path="/donut" element ={ <DoughnutChart /> }>
+            </Route>
+             <Route exact path="/Pie" element={<Piechart value ={value}/>}>
+              </Route> 
+            <Route exact path="/Bar" element={ <BarChart allData = {allData}/>}>
+            </Route> 
+             <Route exact path="/card" element ={<Card value ={value} />}>
+            </Route>
+          </Routes>
+        </Router>
     </div>
   );
 }
