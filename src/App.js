@@ -1,6 +1,9 @@
 import './App.css';
 import axios from "axios";
 import { useState , useEffect } from "react";
+import Piechart from "./components/Piechart"
+import BarChart from "./components/BarChart"
+import LineChart from './components/LineChart';
 
 let App=()=> {
   const [allData, setAllData] = useState([]);
@@ -28,7 +31,9 @@ let App=()=> {
 
   return (
     <div className="App">
-      Hello ! there
+     {/* <Piechart /> */}
+    <BarChart allData = {allData}/>
+    {/* <LineChart/> */}
     </div>
   );
 }
