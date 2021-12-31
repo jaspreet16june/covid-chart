@@ -3,6 +3,8 @@ import { Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import "../css/barChart.css";
 import {Link} from "react-router-dom";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+
 
 let BarChart=({ allData })=> {
      let countryName = [];
@@ -69,21 +71,11 @@ let BarChart=({ allData })=> {
       display: true,
       text: "Bar Chart",
     },
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            min: 0,
-            max: 6,
-            stepSize: 1,
-          },
-        },
-      ],
-    },
   };
   return (
     <div className="bar">
       <Link to="/" className="btn btn-dark back">
+        <ArrowBackIcon />
         Back
       </Link>
       <div className="barChart">

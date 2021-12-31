@@ -6,7 +6,7 @@ import Piechart from "./components/Piechart"
 import BarChart from "./components/BarChart"
 import DoughnutChart from "./components/DoughnutChart"
 import Card from "./components/Card"
-// import { useNavigate } from "react-router-dom";
+
 
 let App=()=> {
   // const navigate = useNavigate();

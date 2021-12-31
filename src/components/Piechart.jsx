@@ -2,12 +2,10 @@ import React from 'react'
 import { Pie } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import "../css/pieChart.css"
-import {Link} from "react-router-dom";
-import ArrowLeftSharpIcon from "@material-ui/icons/ArrowLeftSharp";
-import UndoSharpIcon from "@material-ui/icons/UndoSharp";
+import { Link } from "react-router-dom";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 const Piechart = ({value}) => {
-      // console.log(value.total_deaths.replace(/\,/g, ""));
-      // let total= value.total_deaths.toString();
+  
        let totalCases = parseInt(value.total_cases);
        let totalDeaths = parseInt(value.total_deaths);
        let totalActiveCases = parseInt(value.active_cases);
@@ -62,7 +60,7 @@ const Piechart = ({value}) => {
     return (
       <div className="pie">
         <Link to="/" className="btn btn-dark back">
-            <UndoSharpIcon />
+            <ArrowBackIcon />
             Back
         </Link>
         <div className="head">

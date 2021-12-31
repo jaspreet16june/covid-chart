@@ -3,6 +3,9 @@
   width: 40vw;
   background-color: black;
   border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mainly{
      background: url("../assests/light-brown-texture-background-free-photo.jpg")
@@ -16,6 +19,10 @@
   background-color: black;
   border-radius: 1rem;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 .main {
   display: flex;

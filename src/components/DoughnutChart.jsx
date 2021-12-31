@@ -4,16 +4,17 @@ import Chart from "chart.js/auto";
 import "../css/pieChart.css";
 import "../css/dough.css";
 import {Link} from "react-router-dom";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 const DoughnutChart = ({ value }) => {
   // console.log(value.total_deaths.replace(/\,/g, ""));
-  let totalCases = parseInt(value.total_cases);
-  let totalDeaths = parseInt(value.total_death);
-  let totalActiveCases = parseInt(value.active_cases);
-  let newCases = parseInt(value.new_cases);
-  let totalRecovered = parseInt(value.totalRecovered);
-  let newDeaths = parseInt(value.new_deaths);
-  let seriousCritical = parseInt(value.serious_critical);
+  let totalCases = parseInt(value.total_cases?.replace(/\,/g, ""));
+  let totalDeaths = parseInt(value.total_deaths?.replace(/\,/g, ""));
+  let totalActiveCases = parseInt(value.active_cases?.replace(/\,/g, ""));
+  let newCases = parseInt(value.new_cases?.replace(/\,/g, ""));
+  let totalRecovered = parseInt(value.total_recovered?.replace(/\,/g, ""));
+  let newDeaths = parseInt(value.new_deaths?.replace(/\,/g, ""));
+  let seriousCritical = parseInt(value.serious_critical?.replace(/\,/g, ""));
 
   const data = {
     datasets: [
@@ -61,6 +62,7 @@ const DoughnutChart = ({ value }) => {
   return (
     <div className="pie">
       <Link to="/" className="btn btn-dark back">
+        <ArrowBackIcon />
         Back
       </Link>
       <div className="point">

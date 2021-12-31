@@ -5,27 +5,22 @@ import BarChartSharpIcon from "@material-ui/icons/BarChartSharp";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import PieChartIcon from "@material-ui/icons/PieChart";
 const Card = ({ value }) => {
+  let totalCases = value.total_cases?.replace(/\,/g, "");
+  let totalDeaths = value.total_deaths?.replace(/\,/g,"");
   return (
     <>
-      {/* .replace(/\,/g, "") */}
-      {/* <img
-            src="https://www.saanichnews.com/wp-content/uploads/2020/03/20979572_web1_covidupdate-isj-200318-covid_1.jpg"
-            alt=""
-            /> */}
       <div className="mainly">
         <div className="main">
           <div className="card1">
             <h1 className="head-1">
               Total Covid Cases in the world <br />
-              {parseInt(value.total_cases)
-                .replace(/\,/g, "")
-                .toLocaleString("en-IN")}
+              {parseInt(totalCases)?.toLocaleString("en-IN")}
             </h1>
           </div>
           <div className="card2">
             <h1 className="head-2">
               Total Covid deaths in the world <br />
-              {parseInt(value.total_deaths).toLocaleString("en-IN")}
+              {parseInt(totalDeaths)?.toLocaleString("en-IN")}
             </h1>
           </div>
         </div>
