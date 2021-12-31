@@ -17,7 +17,9 @@ const Card = ({ value }) => {
           <div className="card1">
             <h1 className="head-1">
               Total Covid Cases in the world <br />
-              {parseInt(value.total_cases).toLocaleString("en-IN")}
+              {parseInt(value.total_cases)
+                .replace(/\,/g, "")
+                .toLocaleString("en-IN")}
             </h1>
           </div>
           <div className="card2">
@@ -34,14 +36,13 @@ const Card = ({ value }) => {
         <br />
         <div className="d-grid gap-2 col-6 mx-auto">
           <Link to="/bar" className="btn btn-dark">
-
             Bar Chart <BarChartSharpIcon />
           </Link>
           <Link to="/donut" className="btn btn-dark">
             Doughnut Chart <DonutLargeIcon />
           </Link>
           <Link to="/pie" className="btn btn-dark">
-            Pie Chart <PieChartIcon/>
+            Pie Chart <PieChartIcon />
           </Link>
         </div>
       </div>

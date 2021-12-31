@@ -6,9 +6,10 @@ import {Link} from "react-router-dom";
 import ArrowLeftSharpIcon from "@material-ui/icons/ArrowLeftSharp";
 import UndoSharpIcon from "@material-ui/icons/UndoSharp";
 const Piechart = ({value}) => {
-        // console.log(value.total_deaths.replace(/\,/g, ""));
-        let totalCases = parseInt(value.total_cases);
-       let totalDeaths = parseInt(value.total_death);
+      // console.log(value.total_deaths.replace(/\,/g, ""));
+      // let total= value.total_deaths.toString();
+       let totalCases = parseInt(value.total_cases);
+       let totalDeaths = parseInt(value.total_deaths);
        let totalActiveCases = parseInt(value.active_cases);
        let newCases = parseInt(value.new_cases);
        let totalRecovered = parseInt(value.totalRecovered);
