@@ -6,6 +6,7 @@ import Piechart from "./components/Piechart"
 import BarChart from "./components/BarChart"
 import DoughnutChart from "./components/DoughnutChart"
 import Card from "./components/Card"
+import Dough from "./components/Dough";
 
 
 let App=()=> {
@@ -48,6 +49,8 @@ let App=()=> {
             </Route> 
              <Route exact path="/" element ={<Card value ={value} />}>
             </Route>
+            {/* <Route exact path="/dou" element={ <Dough allData = {allData}/>}>
+            </Route> */}
           </Routes>
         </Router>
        {/* <button onClick={()=>{

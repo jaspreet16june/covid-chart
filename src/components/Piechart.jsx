@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 const Piechart = ({value}) => {
   
-       let totalCases = parseInt(value.total_cases);
-       let totalDeaths = parseInt(value.total_deaths);
-       let totalActiveCases = parseInt(value.active_cases);
-       let newCases = parseInt(value.new_cases);
-       let totalRecovered = parseInt(value.totalRecovered);
-       let newDeaths = parseInt(value.new_deaths);
-       let seriousCritical =parseInt(value.serious_critical);
+       let totalCases = parseInt(value.total_cases?.replace(/\,/g, ""));
+       let totalDeaths = parseInt(value.total_deaths?.replace(/\,/g, ""));
+       let totalActiveCases = parseInt(value.active_cases?.replace(/\,/g, ""));
+       let newCases = parseInt(value.new_cases?.replace(/\,/g, ""));
+       let totalRecovered = parseInt(value.total_recovered?.replace(/\,/g, ""));
+       let newDeaths = parseInt(value.new_deaths?.replace(/\,/g, ""));
+       let seriousCritical =parseInt(value.serious_critical?.replace(/\,/g, ""));
 
      const data = {
        datasets: [
@@ -37,13 +37,13 @@ const Piechart = ({value}) => {
            ],
            borderColor: ["white"],
            backgroundColor: [
-             "lightpink",
+             "saddlebrown",
              "yellow",
              "lightgreen",
-             "red",
+             "burlywood",
              "pink",
-             "lightpurple",
-             "gray",
+             "lightsalmon",
+             "cornflowerblue"
            ],
          },
        ],
@@ -55,8 +55,8 @@ const Piechart = ({value}) => {
          "New Cases",
          "New Deaths",
          "Serious Critical",
-        ], 
-    };
+       ],
+     };
     return (
       <div className="pie">
         <Link to="/" className="btn btn-dark back">

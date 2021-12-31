@@ -7,7 +7,6 @@ import {Link} from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 const DoughnutChart = ({ value }) => {
-  // console.log(value.total_deaths.replace(/\,/g, ""));
   let totalCases = parseInt(value.total_cases?.replace(/\,/g, ""));
   let totalDeaths = parseInt(value.total_deaths?.replace(/\,/g, ""));
   let totalActiveCases = parseInt(value.active_cases?.replace(/\,/g, ""));

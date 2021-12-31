@@ -39,6 +39,9 @@ const Card = ({ value }) => {
           <Link to="/pie" className="btn btn-dark">
             Pie Chart <PieChartIcon />
           </Link>
+          {/* <Link to="/dou" className="btn btn-dark">
+            Doughh <PieChartIcon />
+          </Link> */}
         </div>
       </div>
     </>

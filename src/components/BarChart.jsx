@@ -49,7 +49,7 @@ let BarChart=({ allData })=> {
             "rgba(54, 162, 235, 0.2)",
             "rgba(54, 162, 235, 0.2)",
           ],
-          backgroundColor: ["lightseagreen"],
+          backgroundColor: ["burlywood"],
         },
         {
           label: "Total active cases in the world",
